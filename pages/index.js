@@ -42,7 +42,7 @@ export default function Home() {
           <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer" />
 
           {/* Avatar */}
-          <AvatarLogo url={"/static/img/jeetpal2.jpg"} />
+          <AvatarLogo url={"https://jooglewebsearch.vercel.app/_next/image?url=%2Fstatic%2Fimg%2FjoogleLogo.png&w=384&q=75"} />
         </div>
       </header>
 

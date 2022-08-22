@@ -51,7 +51,7 @@ function Header() {
             Search
           </button>
         </form>
-        <AvatarLogo className="ml-auto" url={"/static/img/jeetpal2.jpg"} />
+        <AvatarLogo className="ml-auto" url={"https://jooglewebsearch.vercel.app/_next/image?url=%2Fstatic%2Fimg%2FjoogleLogo.png&w=384&q=75"} />
       </div>
 
       <HeaderOptions />
