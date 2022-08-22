@@ -21,7 +21,7 @@ function Header() {
     <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 items-center">
         <Image
-          src={"/images/joogleLogo.png"}
+          src={"/static/img/joogleLogo.png"}
           height={40}
           width={120}
           className="cursor-pointer"
@@ -50,7 +50,7 @@ function Header() {
             Search
           </button>
         </form>
-        <AvatarLogo className="ml-auto" url="images/jeetpal2.jpg" />
+        <AvatarLogo className="ml-auto" url="static/img/jeetpal2.jpg" />
       </div>
 
       <HeaderOptions />

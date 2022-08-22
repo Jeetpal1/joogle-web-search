@@ -42,14 +42,14 @@ export default function Home() {
           <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer" />
 
           {/* Avatar */}
-          <AvatarLogo url="images/jeetpal2.jpg" />
+          <AvatarLogo url="static/img/jeetpal2.jpg" />
         </div>
       </header>
 
       {/* Body */}
       <form className="flex flex-col items-center mt-44 flex-grow w-4/5">
         <Image
-          src={"/images/joogleLogo.png"}
+          src={"/static/img/joogleLogo.png"}
           height={100}
           width={300}
           alt="Joogle Logo"
