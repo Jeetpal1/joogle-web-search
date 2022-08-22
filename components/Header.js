@@ -4,10 +4,19 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 import AvatarLogo from "./AvatarLogo";
 import HeaderOptions from "./HeaderOptions";
+import toast from "react-hot-toast";
 
 function Header() {
   const router = useRouter();
   const searchInputRef = useRef(null);
+  const notifyUser = () =>
+    toast(
+      "Hold Up, buddy. I am still working on that part. Why don't you search something.",
+      {
+        icon: "🌟",
+      }
+    );
+
   const search = (e) => {
     e.preventDefault();
 
@@ -43,18 +52,32 @@ function Header() {
             onClick={() => (searchInputRef.current.value = "")}
           />
 
-          <MicrophoneIcon className="h-6 mr-3 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300" />
+          <MicrophoneIcon
+            className="h-6 mr-3 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300 cursor-pointer"
+            onClick={notifyUser}
+          />
 
-          <SearchIcon className="h-6 text-blue-500 hidden sm:inline-flex" />
+          <SearchIcon
+            className="h-6 text-blue-500 hidden sm:inline-flex cursor-pointer"
+            onClick={search}
+          />
 
           <button type="submit" hidden onClick={search}>
             Search
           </button>
         </form>
-        <AvatarLogo className="ml-auto" url={"https://jooglewebsearch.vercel.app/_next/image?url=%2Fstatic%2Fimg%2FjoogleLogo.png&w=384&q=75"} />
+        <AvatarLogo
+          className="ml-auto"
+          url={
+            "https://jooglewebsearch.vercel.app/_next/image?url=%2Fstatic%2Fimg%2FjoogleLogo.png&w=384&q=75"
+          }
+          onClick={() => {
+            router.push("/");
+          }}
+        />
       </div>
 
-      <HeaderOptions />
+      <HeaderOptions notifyUser={notifyUser}/>
     </header>
   );
 }

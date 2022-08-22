@@ -8,23 +8,40 @@ import {
   SearchIcon,
 } from "@heroicons/react/outline";
 
-function HeaderOptions() {
+function HeaderOptions({ notifyUser }) {
   return (
     <div className="flex w-full text-gray-700 justify-evenly text-sm lg:text-base lg:justify-start lg:space-x-36 lg:pl-52 border-b">
       {/* Left */}
       <div className="flex space-x-6">
-        <HeaderOption Icon={SearchIcon} title="All" selected />
-        <HeaderOption Icon={PhotographIcon} title="Images" />
-        <HeaderOption Icon={PlayIcon} title="Videos" />
-        <HeaderOption Icon={NewspaperIcon} title="News" />
-        <HeaderOption Icon={MapIcon} title="Maps" />
-        <HeaderOption Icon={DotsVerticalIcon} title="More" />
+        <HeaderOption
+          Icon={SearchIcon}
+          title="All"
+          selected
+          notifyUser={notifyUser}
+        />
+        <HeaderOption
+          Icon={PhotographIcon}
+          title="Images"
+          notifyUser={notifyUser}
+        />
+        <HeaderOption Icon={PlayIcon} title="Videos" notifyUser={notifyUser} />
+        <HeaderOption
+          Icon={NewspaperIcon}
+          title="News"
+          notifyUser={notifyUser}
+        />
+        <HeaderOption Icon={MapIcon} title="Maps" notifyUser={notifyUser} />
+        <HeaderOption
+          Icon={DotsVerticalIcon}
+          title="More"
+          notifyUser={notifyUser}
+        />
       </div>
 
       {/* Right */}
       <div className="flex space-x-4">
-        <p className="link">Settings</p>
-        <p className="link">Tools</p>
+        <p className="link" onClick={notifyUser}>Settings</p>
+        <p className="link" onClick={notifyUser}>Tools</p>
       </div>
     </div>
   );
