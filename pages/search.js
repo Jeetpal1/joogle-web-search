@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 
 function Search({ results }) {
   const router = useRouter();
- 
+
   return (
     <div>
       <Toaster />;
@@ -28,10 +28,6 @@ export default Search;
 export async function getServerSideProps(context) {
   const useDummyData = false;
   const startIndex = context.query.start || "0";
-
-  console.log(
-    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}&start=${startIndex}`
-  );
 
   const data = useDummyData
     ? Response
